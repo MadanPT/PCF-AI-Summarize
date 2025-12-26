@@ -5,7 +5,11 @@ AI Call Summary Generation – Azure Functions + AI Foundry + PCF + Dynamics 365
 This solution enables automatic call summary generation inside Dynamics 365 CRM Activities using Azure AI Foundry Agents.
 Users enter call notes in a custom PCF control, click a button, and instantly receive an AI-generated call summary, powered by GPT-5 Chat, through an Azure Function API.
 ________________________________________
- High-Level Architecture
+# High-Level Architecture
+
+ <img width="800" height="800" alt="Image" src="https://github.com/user-attachments/assets/ec1c4e49-6f4a-4d33-8df1-c97f07406b1f" />
+
+# Flow
 Dynamics 365 (Activity Form)
         |
         |  (PCF Control API Call)
@@ -27,7 +31,7 @@ PCF Control (Read-only Summary Textbox)
 
  
 ________________________________________
- Key Components
+# Key Components
 1. Azure Functions
 •	HTTP-triggered Azure Function
 •	Acts as a backend API for the PCF control
@@ -43,7 +47,7 @@ o	Input Textbox – Editable (Call Notes)
 o	Button – Generate Summary
 o	Output Textbox – Read-only (AI Summary)
 ________________________________________
- End-to-End Flow
+# End-to-End Flow
 Step-by-Step Execution
 1.	User enters Call Notes
 o	Inside Dynamics 365 Activity form
@@ -73,7 +77,7 @@ o	Summary returned as API response
 11.	PCF Control displays summary
 o	Read-only textbox shows AI-generated result
 ________________________________________
- AI Capabilities
+# AI Capabilities
 •	Summarizes long and unstructured call notes
 •	Extracts:
 o	Key discussion points
@@ -81,7 +85,7 @@ o	Action items
 o	Follow-ups
 •	Ensures consistent call documentation inside CRM
 ________________________________________
- Deployment Details
+# Deployment Details
 Azure Function
 •	Deployed to Azure App Service
 •	Secured using Azure Identity / Managed Identity
@@ -90,7 +94,7 @@ PCF Control
 •	Packaged and deployed via Power Platform
 •	Bound to Dynamics 365 Activity forms
 ________________________________________
- Security & Best Practices
+# Security & Best Practices
 •	No AI keys exposed to client (PCF)
 •	All AI calls handled server-side
 •	Supports future enhancements:
@@ -98,21 +102,21 @@ o	Authentication
 o	Logging & monitoring
 o	Rate limiting
 ________________________________________
- Benefits
+# Benefits
 •	⏱️ Saves user time on manual call summaries
 •	📄 Improves CRM data quality
 •	🤖 Leverages latest Azure AI models
 •	🔌 Clean separation of UI (PCF) and AI logic (Azure Functions)
 •	📈 Scalable and cloud-native design
 ________________________________________
-Future Enhancements (Optional)
+# Future Enhancements (Optional)
 •	Multi-language call summaries
 •	Sentiment analysis
 •	Action item extraction
 •	Storing summaries directly in CRM fields
 •	Support for voice-to-text integration
 ________________________________________
- Tech Stack
+# Tech Stack
 •	Azure Functions
 •	Azure AI Foundry
 •	GPT-5 Chat Model
@@ -120,7 +124,7 @@ ________________________________________
 •	PCF (TypeScript)
 •	Dynamics 365 / Dataverse
 ________________________________________
- Conclusion
+# Conclusion
 This solution seamlessly integrates AI-powered summarization into Dynamics 365, providing a modern, scalable, and secure approach to enhance CRM productivity using Azure AI Foundry Agents.
 ________________________________________
 
